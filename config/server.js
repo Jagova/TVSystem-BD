@@ -10,7 +10,7 @@ class Server {
 
         this.authPath = "/api/auth";
         //this.usersPath = "/api/users";
-        this.tvShowsPath = "/api/tvshows";
+        //this.tvShowsPath = "/api/tvshows";
 
         this.middlewares();
         this.routes();
@@ -20,7 +20,7 @@ class Server {
     routes() {
         this.app.use(this.authPath, require("../routes/auth"));
         //this.app.use(this.usersPath, require("../routes/users"));
-        this.app.use(this.tvShowsPath, require("../routes/tvshows"));
+        //this.app.use(this.tvShowsPath, require("../routes/tvshows"));
     }
 
     middlewares() {
