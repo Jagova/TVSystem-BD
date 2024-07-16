@@ -7,10 +7,12 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT || 8080;
+        this.corsOptions = {
+            origin: [process.env.FRONTEND_URL || ""],
+        };
 
         this.authPath = "/api/auth";
-        //this.usersPath = "/api/users";
-        //this.tvShowsPath = "/api/tvshows";
+        this.tvShowsPath = "/api/tvshows";
 
         this.middlewares();
         this.routes();
@@ -19,13 +21,12 @@ class Server {
 
     routes() {
         this.app.use(this.authPath, require("../routes/auth"));
-        //this.app.use(this.usersPath, require("../routes/users"));
-        //this.app.use(this.tvShowsPath, require("../routes/tvshows"));
+        this.app.use(this.tvShowsPath, require("../routes/tvshows"));
     }
 
     middlewares() {
         this.app.use(express.json());
-        this.app.use(cors());
+        this.app.use(cors(this.corsOptions));
     }
 
     listen() {
