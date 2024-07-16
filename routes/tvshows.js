@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { getAllTvShows, getTvShowById, createTvShow, deleteTvShowById, updateTvShowById, likeTvShow, dislikeTvShow } = require('../controllers/TvShows');
+const { getAllTvShows, getTvShowById, createTvShow, deleteTvShowById, updateTvShowById, likeTvShow, dislikeTvShow } = require('../controllers/tvShows');
 const { validateJWT } = require('../middlewares/verifyJWT');
 const { verifyAdminRole } = require('../middlewares/verifyAdminRole');
 const router = Router();
