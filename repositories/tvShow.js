@@ -1,4 +1,4 @@
-const TvShow = require('../models/tvShow');
+const TvShow = require('../models/tvshow');
 const ObjectId = require("mongoose").Types.ObjectId;
 
 class TvShowRepository {
